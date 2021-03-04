@@ -1,0 +1,1 @@
+web: gunicorn marksPortal.wsgi --log-file -

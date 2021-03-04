@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LeaderBoard</title>
+</head>
+<body>
+{% include 'navbar.html' %}
+
+<div class="container" style="margin-top: 100px;text-align: center">
+    <h1>LeaderBoard</h1>
+    <div class="row" style="margin-top: 30px;margin-bottom: 30px;">
+        <h5 class="col-1">Sort:  </h5>
+        <a href="{% url 'leaderboard' %}" class="btn btn-outline-primary col-3">High to Low</a>
+        <a href="{% url 'leaderboard_ascending' %}" class="btn btn-outline-warning col-3">Low to High</a>
+        <div class="col-1" style="width: 100%"></div>
+        <form class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+          <input class="form-control mr-sm-2 col" type="text" placeholder="Search name" name="name">
+          <button class="btn btn-outline-success my-2 my-sm-0 col" type="submit">Search</button>
+
+        </form>
+    </div>
+    <div class="row">
+
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Roll No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Maths</th>
+                  <th scope="col">Physics</th>
+                  <th scope="col">Chemistry</th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Percentage</th>
+                </tr>
+            </thead>
+            {% for student in students %}
+                <tbody>
+                    <tr>
+                      <th scope="row">{{ student.roll_no }}</th>
+                      <td>{{ student.name }}</td>
+                      <td>{{ student.marks_maths }}</td>
+                      <td>{{ student.marks_physics }}</td>
+                        <td>{{ student.marks_chemistry }}</td>
+                        <td>{{ student.total }}</td>
+                        <td>{{ student.percentage }}%</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>
