@@ -3,7 +3,7 @@ asgiref @ file:///tmp/build/80754af9/asgiref_1594338739818/work
 bcrypt==3.2.0
 certifi==2020.12.5
 cffi==1.14.4
-Django @ file:///tmp/build/80754af9/django_1606860386887/work
+django==3.1.4
 django-filter==2.4.0
 djangorestframework==3.12.2
 Faker==5.0.2
