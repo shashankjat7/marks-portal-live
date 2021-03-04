@@ -1,5 +1,4 @@
 argon2-cffi==20.1.0
-asgiref @ file:///tmp/build/80754af9/asgiref_1594338739818/work
 bcrypt==3.2.0
 certifi==2020.12.5
 cffi==1.14.4
@@ -10,7 +9,6 @@ Faker==5.0.2
 gunicorn==20.0.4
 Markdown==3.3.4
 Pillow==8.0.1
-psycopg2 @ file:///opt/concourse/worker/volumes/live/c8a4b965-959f-4e6c-7792-4aa881d63c8d/volume/psycopg2_1594305121341/work
 pycparser==2.20
 python-dateutil==2.8.1
 pytz==2020.1
